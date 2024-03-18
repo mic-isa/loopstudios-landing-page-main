@@ -71,9 +71,6 @@ ul {
       font-size: 0.7rem;
       font-weight: 800;
     }
-    body {
-      font-size: 1.3rem;
-    }
     h1{
         line-height: 1;
       }
@@ -90,28 +87,30 @@ ul {
       }
   }  
 body {
-    font-family: var(--ff-secondary);
-    line-height: 1.2;
-    font-size: 0.875rem;
-    display: flex;
+  font-family: var(--ff-secondary);
+  line-height: 1.2;
+  font-size: 0.875rem;
+  display: flex;
+  width: 100vw;
 }
 .body {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0rem;
 }
 .grid{
-    display: grid;
-    grid-template-columns: minmax(0,1fr);
-    grid-template-rows: repeat(8,minmax(0,1fr));
-    gap:1.2rem;
-    margin:1rem 0;  
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  grid-template-rows: repeat(8,minmax(0,1fr));
+  gap:1.2rem;
+  margin:1rem 0;  
 }
 .nav{
   background-image: url(images/mobile/image-hero.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  width: 100%;
   height: 90vh;
   padding: 2rem 3rem ;
   display: flex;
@@ -120,12 +119,12 @@ body {
   gap: 5rem;
 }
 .nav-message{
-  border: 2px solid var(--clr-dark-gray);
-  width: 80vw;
+  border: 2px solid var(--clr-white);
+  width: 100%;
   padding: 1rem;
 }
 .nav-message p{
-  color: var(--clr-dark-gray) ;
+  color: var(--clr-white) ;
   font-size: 3.5rem;
   text-transform: uppercase;
 }
@@ -144,20 +143,20 @@ body {
     cursor: pointer;
 }
 .show-nav{
-    background-color: black; 
-    color: var(--clr-white);
-    position: fixed;
-    padding:2rem ;
-    top: 0;
-    right:  0;
-    height: 100%;
-    width: 65%;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 1000;
-    gap:8rem;
+  background-color:var(--clr-black); 
+  color: var(--clr-white);
+  position: fixed;
+  padding:2rem ;
+  top: 0;
+  right:  0;
+  height: 100%;
+  width: 65%;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1000;
+  gap:8rem;
 }
 .lg{
   display:none ;
@@ -180,12 +179,6 @@ body {
     color: var(--clr-dark-gray);
     font-size: 1.1rem;  
 }
- .men{
-    display:none ;
-}
-.show-nav .men{
-    display:flex ;
-}
 .menu img ,.menu li,.close{
     cursor: pointer;
 }
@@ -206,9 +199,21 @@ body {
   width: 100%;
   padding: 0;
 }
+
 .menu{
     display:none ;
     list-style-type: none;   
+}
+.mev{
+  display: flex;
+  flex-direction: column;
+  gap:0.3rem;
+  cursor: pointer;
+  justify-content: center;
+}
+.mev li{
+  font-size: 1.0rem;
+
 }
 section{
   padding: 2rem  ;
@@ -327,49 +332,49 @@ section{
 .one{
   background-image: url(images/mobile/image-deep-earth.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .two{
   background-image: url(images/mobile/image-night-arcade.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .three{
   background-image: url(images/mobile/image-soccer-team.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .four{
   background-image: url(images/mobile/image-grid.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .five{
   background-image: url(images/mobile/image-from-above.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .six{
   background-image: url(images/mobile/image-pocket-borealis.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .seven{
   background-image: url(images/mobile/image-curiosity.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 .eight{
   background-image: url(images/mobile//image-fisheye.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   
 }
 footer{
@@ -384,15 +389,6 @@ footer{
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.men{
-  display: flex;
-  flex-direction: column;
-  gap:0.3rem;
-  cursor: pointer;
-  justify-content: center;
-  color: var(--clr-white);
-  
 }
 .social-container{
   display: flex;
@@ -417,7 +413,7 @@ footer{
     padding: 2rem 5rem ;
     background-image: url(images/desktop/image-hero.jpg);
     align-items: flex-start;
-    gap: 8rem;
+    gap: 5rem;
   }
   .nav-header{
       gap:1.0rem;
@@ -428,32 +424,42 @@ footer{
       display: none;
   }
   
-  .menu{
-      display: flex;
-      gap:1.5rem;
-      cursor: pointer;
-      justify-content: flex-end;
-      color: var(--clr-white);
+  .menu,.mev{
+    display: flex;
+    flex-direction: row;
+    gap:1.5rem;
+    cursor: pointer;
+    color: var(--clr-white);
+    justify-content: flex-start;
   }
   .logo{
-      font-size: 1.6rem;
+    font-size: 1.6rem;
   }
-  .menu li{
-    font-size: 0.7rem;
+  .menu li,.mev li{
+    font-size: 0.75rem;
+    position: relative;
+    padding: 0.5rem 0;
 
   }
-  .menu li:hover{
-      border-bottom: 2px solid var(--clr-white);
+  .menu li:hover::after,.mev li:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 50%; 
+    height: 2px;
+    background-color: var(--clr-white);
   }
   .nav-message{
-    width: 35%;
-    padding: 1rem;
+    width: 55%;
+    padding: 1.2rem;
   }
   section{
     padding: 5rem  ;
   }
   .nav-message p{
-    font-size: 2.2rem;
+    font-size: 3.20rem;
   }
   .container-one{
     width: 100%;
@@ -536,50 +542,34 @@ footer{
   }
   .one{
     background-image: url(images/desktop/image-deep-earth.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .two{
     background-image: url(images/desktop/image-night-arcade.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .three{
     background-image: url(images/desktop/image-soccer-team.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .four{
     background-image: url(images/desktop/image-grid.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .five{
     background-image: url(images/desktop/image-from-above.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .six{
     background-image: url(images/desktop/image-pocket-borealis.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .seven{
     background-image: url(images/desktop/image-curiosity.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   .eight{
     background-image: url(images/desktop/image-fisheye.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     
   }
   footer{
@@ -593,14 +583,6 @@ footer{
     column-gap: 20rem;
     text-align: start;
     justify-content: start;
-  }
-  .men{
-    display: flex;
-    gap:1rem;
-    flex-direction: row;
-    cursor: pointer;
-    justify-content: flex-start;
-    color: var(--clr-white);
   }
   .social-container{
     grid-row-start: 1;
