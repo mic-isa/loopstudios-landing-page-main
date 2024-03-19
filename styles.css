@@ -11,7 +11,6 @@
 }
 /* =============== Global Styles =============== */
 
-
 *, ::after, ::before,body {
     margin: 0;
     padding: 0;
@@ -91,7 +90,7 @@ body {
   line-height: 1.2;
   font-size: 0.875rem;
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 .body {
   display: flex;
@@ -217,7 +216,7 @@ body {
 }
 section{
   padding: 2rem  ;
-  width: 100vw;
+  width: 100%;
 }
 .container-one{
   width: 100%;
@@ -589,6 +588,6 @@ footer{
     grid-row-end: 2;
     grid-column-start: 2;
       grid-column-end: 3;
-      justify-content: start;
+      justify-content: end;
   }
   }
